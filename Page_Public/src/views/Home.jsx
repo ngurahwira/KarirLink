@@ -1,15 +1,10 @@
-import { useState } from "react";
-import { Navbartest } from "./components/navbar";
-import { Pagination } from "./components/Pagination";
-import { Cards } from "./components/Cards";
-import { RouterProvider } from "react-router-dom";
-
-function App() {
-  const [count, setCount] = useState(0);
-
+import { Navbartest } from "../components/Navbar";
+import { Pagination } from "../components/Pagination";
+import { Cards } from "../components/Cards";
+// Navbartest;
+const Home = () => {
   return (
     <>
-      {/* <RouterProvider router={router}> */}
       <Navbartest />
       <section id="home" className="pt-9 h-screen">
         <div className="container h-full flex items-center">
@@ -61,6 +56,6 @@ function App() {
       <Pagination />
     </>
   );
-}
+};
 
-export default App;
+export default Home;
