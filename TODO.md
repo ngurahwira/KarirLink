@@ -18,7 +18,7 @@ Buatlah web layouting menggunakan HTML dan CSS (boleh menggunakan CSS framework)
 
 - [ ] **Public site**
 
-  - [ ] Halaman Home/Landing Page
+  - [x] Halaman Home/Landing Page
     - Halaman yang berfungsi untuk menampilkan data Entitas Utama berbentuk Card, tambahkan input search/filter dan pagination pada halaman ini, buatlah halaman ini dengan layout yang rapi dan semenarik mungkin.
   - [ ] Halaman Detail
     - Buatlah Halaman yang berisi detail dari Entitas Utama.
@@ -27,8 +27,8 @@ Buatlah web layouting menggunakan HTML dan CSS (boleh menggunakan CSS framework)
   - [x] Halaman Login
         Pada halaman ini buatlah sebuah form untuk menampung input email dan password user yang digunakan untuk masuk ke CMS
   - [x] Halaman list entitas utama . Tampilkan data entity dalam bentuk Tabel .
-  - [ ] Navbar / Sidebar yang berfungsi sebagai navigasi halaman.
-  - [ ] Halaman create entitas utama
+  - [x] Navbar / Sidebar yang berfungsi sebagai navigasi halaman.
+  - [] Halaman create entitas utama
     - Buatlah form yang berfungsi sebagai penampung input data entitas utama yang akan dibuat, sesuaikanlah input dengan dengan tipe yang sesuai. Untuk imgUrl buatlah input bertipe text saja.
   - [ ] Halaman edit entitas utama
     - Buatlah form yang sama persis seperti pada halaman create dengan Judul halaman/form yang berbeda.

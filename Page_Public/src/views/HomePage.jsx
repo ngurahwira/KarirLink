@@ -1,5 +1,5 @@
-import { Pagination } from "../components/Pagination";
-import { Cards } from "../components/Cards";
+import { Cards } from "../components/CardsPublic";
+import Pagination from "../components/PaginationPublic";
 
 const Home = () => {
   return (

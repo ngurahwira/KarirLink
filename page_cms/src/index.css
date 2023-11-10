@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sidebar {
+    background-color: #333;
+    padding: 20px;
+    height: 100vh;
+    /* Tinggi sidebar sesuai tinggi viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.btn-sidebar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-sidebar:hover {
+    background-color: #777;
+}
+
+.w-full {
+    max-width: 1000px;
+    /* Sesuaikan dengan lebar maksimum yang diinginkan */
+    margin: 0 auto;
+    /* Memusatkan konten */
+}

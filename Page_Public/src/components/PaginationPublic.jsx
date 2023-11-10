@@ -1,4 +1,4 @@
-export const Pagination = () => {
+const Pagination = () => {
   return (
     <div className="container pt-20 py-7 flex justify-center">
       <div className="join">
@@ -9,3 +9,5 @@ export const Pagination = () => {
     </div>
   );
 };
+
+export default Pagination;

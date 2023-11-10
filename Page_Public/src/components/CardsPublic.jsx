@@ -25,7 +25,7 @@ export const Cards = () => {
       try {
         setIsLoading(true);
         const { data } = await Job_API.get("pub/job");
-        console.log(data);
+        // console.log(data);
         setJobs(data.result.data);
       } catch (error) {
         // console.log(error);
@@ -48,7 +48,7 @@ export const Cards = () => {
   return (
     <>
       <div className="container ">
-        <div class="grid grid-cols-2 gap-2 ">
+        <div class="grid grid-cols-3 gap-2 ">
           {/* {JSON.stringify(jobs)} */}
           {jobs.map((job) => (
             <div>
@@ -57,7 +57,13 @@ export const Cards = () => {
                 key={job.id}
               >
                 <div className="card-body">
-                  <img src={job.imgUrl} alt="Job" />
+                  <div className="flex items-center w-full aspect-[4/2] overflow-hidden">
+                    <img
+                      className="w-full object-cover"
+                      src={job.imgUrl}
+                      alt="Job"
+                    />
+                  </div>
 
                   <h1 className="card-title">{job.title}</h1>
                   <h5 className="card-title">{job.description}</h5>
