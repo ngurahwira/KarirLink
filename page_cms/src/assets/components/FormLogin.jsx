@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../configs/config";
 
 const FormLogin = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ const FormLogin = () => {
     // console.log(evt, 20);
     evt.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3000/login`, {
+      const response = await axios.post(`${BASE_URL}/login`, {
         email,
         password,
       });
@@ -21,7 +22,7 @@ const FormLogin = () => {
 
       localStorage.setItem("token", response.data.access_token);
 
-      navigate("/home");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }

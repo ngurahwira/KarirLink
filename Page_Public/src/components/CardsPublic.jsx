@@ -13,8 +13,6 @@ export const Cards = () => {
   const [error, setError] = useState(null);
   const [jobs, setJobs] = useState([]);
 
-  // console.log(jobs, 20);
-
   const navigate = useNavigate();
   const hendleOnclick = (id) => {
     navigate(`/pub/detail/${id}`);

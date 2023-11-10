@@ -33,6 +33,6 @@
 .w-full {
     max-width: 1000px;
     /* Sesuaikan dengan lebar maksimum yang diinginkan */
-    margin: 0 auto;
+    margin: auto;
     /* Memusatkan konten */
 }

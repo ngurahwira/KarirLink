@@ -1,9 +1,9 @@
 const Dashboard = () => {
   return (
     <>
-      <div className="container w-full h-full flex items-center justify-center">
+      <div className="container w-full h-full flex items-center ">
         {/* Main Content */}
-        <div className="container flex pt-10 w-[100px]">
+        <div className="container flex pt-10 ">
           <table className="container table w-full">
             {/* head */}
             <thead>

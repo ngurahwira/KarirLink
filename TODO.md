@@ -20,7 +20,7 @@ Buatlah web layouting menggunakan HTML dan CSS (boleh menggunakan CSS framework)
 
   - [x] Halaman Home/Landing Page
     - Halaman yang berfungsi untuk menampilkan data Entitas Utama berbentuk Card, tambahkan input search/filter dan pagination pada halaman ini, buatlah halaman ini dengan layout yang rapi dan semenarik mungkin.
-  - [ ] Halaman Detail
+  - [x] Halaman Detail
     - Buatlah Halaman yang berisi detail dari Entitas Utama.
 
 - [ ] **CMS site**
