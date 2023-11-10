@@ -1,11 +1,9 @@
-import { Navbartest } from "../components/Navbar";
 import { Pagination } from "../components/Pagination";
 import { Cards } from "../components/Cards";
-// Navbartest;
+
 const Home = () => {
   return (
     <>
-      <Navbartest />
       <section id="home" className="pt-9 h-screen">
         <div className="container h-full flex items-center">
           {/* left */}

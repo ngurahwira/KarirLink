@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Job_Portal_URL = "http://localhost:3000/";
 const Job_API = axios.create({
@@ -13,6 +14,12 @@ export const Cards = () => {
   const [jobs, setJobs] = useState([]);
 
   // console.log(jobs, 20);
+
+  const navigate = useNavigate();
+  const hendleOnclick = (id) => {
+    navigate(`/pub/detail/${id}`);
+  };
+
   useEffect(() => {
     async function fetchJobs() {
       try {
@@ -41,7 +48,7 @@ export const Cards = () => {
   return (
     <>
       <div className="container ">
-        <div class="grid grid-cols-2 gap-3 ">
+        <div class="grid grid-cols-2 gap-2 ">
           {/* {JSON.stringify(jobs)} */}
           {jobs.map((job) => (
             <div>
@@ -49,18 +56,19 @@ export const Cards = () => {
                 className="card card-side bg-base-100 shadow-xl"
                 key={job.id}
               >
-                <figure>
-                  <img src={job.imgUrl} alt="Job" />
-                </figure>
-
                 <div className="card-body">
+                  <img src={job.imgUrl} alt="Job" />
+
                   <h1 className="card-title">{job.title}</h1>
                   <h5 className="card-title">{job.description}</h5>
                   <div className="card-actions justify-end">
                     <a href="#">
                       {" "}
-                      <button className="btn btn-primary justify-end">
-                        ReadMore
+                      <button
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-end"
+                        onClick={() => hendleOnclick(job.id)}
+                      >
+                        Readmore
                       </button>
                     </a>
                   </div>
