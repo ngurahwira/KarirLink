@@ -1,6 +1,7 @@
 import { Link, animateScroll as scroll } from "react-scroll";
 import { Cards } from "../components/CardsPublic";
 import Pagination from "../components/PaginationPublic";
+import JobImage from "../assets/img2.png";
 
 const Home = () => {
   const scrollToBottom = () => {
@@ -36,7 +37,7 @@ const Home = () => {
           {/* right */}
           <div className="w-full lg:w-1/2 hidden lg:flex items-center">
             <img
-              src="/public/assets/img2.png"
+              src={JobImage}
               alt="test"
               className="max-w-full mx-auto h-auto lg:h-full"
             />
