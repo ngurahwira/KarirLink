@@ -3,8 +3,15 @@ import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../configs/config";
 
+const accessToken = localStorage.getItem("token");
+
 const Job_API = axios.create({
   baseURL: BASE_URL,
+
+  headers: {
+    Authorization: `Bearer ${accessToken}`,
+    "Content-Type": "application/json",
+  },
 });
 
 const Dashboard = () => {
@@ -17,7 +24,7 @@ const Dashboard = () => {
       try {
         setIsLoading(true);
         const { data } = await Job_API.get("job");
-        // console.log(data.dataJob);
+        console.log(data.dataJob);
         setJobs(data.dataJob);
       } catch (error) {
         // console.log(error);

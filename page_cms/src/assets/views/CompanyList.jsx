@@ -3,8 +3,15 @@ import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../configs/config";
 
+const accessToken = localStorage.getItem("token");
+
 const Job_API = axios.create({
   baseURL: BASE_URL,
+
+  headers: {
+    Authorization: `Bearer ${accessToken}`,
+    "Content-Type": "application/json",
+  },
 });
 
 const Company = () => {

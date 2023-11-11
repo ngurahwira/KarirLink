@@ -10,25 +10,20 @@ const FormLogin = () => {
   const navigate = useNavigate();
 
   const formOnSubmitHandler = async (evt) => {
-    // console.log(evt, 20);
     evt.preventDefault();
     try {
-      const response = await axios.post(`${BASE_URL}/login`, {
-        email,
-        password,
-      });
-
-      console.log(response.data.access_token);
-
-      localStorage.setItem("token", response.data.access_token);
-
-      navigate("/dashboard");
+      const response = await axios
+        .post(`${BASE_URL}/login`, {
+          email,
+          password,
+        })
+        .then((res) => localStorage.setItem("token", res.data.access_token))
+        .then(() => navigate("/dashboard"))
+        .then(() => window.location.reload());
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
-
-  // console.log(email, password);
 
   return (
     <>

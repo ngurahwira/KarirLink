@@ -1,6 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="navbar bg-base-100">
@@ -67,7 +74,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">LogOut</a>
+          <a className="btn" onClick={handleLogout}>
+            LogOut
+          </a>
         </div>
       </div>
     </>
