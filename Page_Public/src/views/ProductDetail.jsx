@@ -29,8 +29,9 @@ const ProductDetail = () => {
         setIsLoading(false);
       }
     }
-
-    fetchJobs();
+    if (id) {
+      fetchJobs();
+    }
   }, [id]);
 
   if (isLoading) {
