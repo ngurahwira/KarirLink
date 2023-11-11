@@ -15,7 +15,7 @@ export const Cards = () => {
 
   const navigate = useNavigate();
   const hendleOnclick = (id) => {
-    navigate(`/pub/detail/${id}`);
+    navigate(`/detail/${id}`);
   };
 
   useEffect(() => {
@@ -64,15 +64,15 @@ export const Cards = () => {
                   </div>
 
                   <h1 className="card-title">{job.title}</h1>
-                  <h5 className="card-title">{job.description}</h5>
+                  <p>{job.description}</p>
+
                   <div className="card-actions justify-end">
-                    <a href="#">
-                      {" "}
+                    <a href="">
                       <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-end"
+                        className="text-base font-semibold text-white bg-blue-500 py-3 px-8 rounded-md hover:shadow-lg hover:opacity-70 transition duration-300 ease-in-out cursor-pointer justify-end"
                         onClick={() => hendleOnclick(job.id)}
                       >
-                        Readmore
+                        More
                       </button>
                     </a>
                   </div>

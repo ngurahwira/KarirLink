@@ -42,21 +42,33 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="container ">
-        <div className="grid grid-cols-2 gap-3 ">
-          {/* {JSON.stringify(jobs)} */}
+      {/* {JSON.stringify(jobs)} */}
+      <div className="container mx-auto">
+        <div className="max-w-lg mx-auto">
+          <div className="card card-side bg-base-100 shadow-xl p-7">
+            <div className="card-body">
+              <div className="aspect-w-2 aspect-h-1 overflow-hidden">
+                <img
+                  src={jobs.dataJob.imgUrl}
+                  alt={jobs.dataJob.title}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <h1 className="card-title text-2xl font-bold mt-4">
+                {jobs.dataJob.title}
+              </h1>
+              <h6 className="text-1xl font-bold mt-4">
+                {jobs.dataJob.jobType}
+              </h6>
+              <p className="text-gray-700">{jobs.dataJob.description}</p>
+              <div class=" pt-4 pb-2">
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                  #{jobs.dataJob.Company.name}
+                </span>
+              </div>
 
-          <div>
-            <div
-              className="card card-side bg-base-100 shadow-xl pt-7"
-              key={jobs.dataJob.id}
-            >
-              <img src={jobs.dataJob.imgUrl} alt="img" />
-              <div className="card-body">
-                <h1 className="card-title">{jobs.dataJob.title}</h1>
-                <h5 className="card-title">{jobs.dataJob.description}</h5>
-                <button>Back</button>
-                <div className="card-actions justify-end"></div>
+              <div className="card-actions flex justify-end mt-4">
+                <button className="btn btn-primary">Apply Now</button>
               </div>
             </div>
           </div>

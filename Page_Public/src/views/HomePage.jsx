@@ -1,7 +1,11 @@
+import { Link, animateScroll as scroll } from "react-scroll";
 import { Cards } from "../components/CardsPublic";
 import Pagination from "../components/PaginationPublic";
 
 const Home = () => {
+  const scrollToBottom = () => {
+    scroll.scrollToBottom();
+  };
   return (
     <>
       <section id="home" className="pt-9 h-screen">
@@ -23,8 +27,8 @@ const Home = () => {
             <br />
 
             <a
-              href="#"
-              className="text-base font-semibold text-white bg-primary py-3 px-8 rounded-md hover:shadow-lg hover:opacity-70 transition duration-300 ease-in-out"
+              onClick={scrollToBottom}
+              className="text-base font-semibold text-white bg-blue-500 py-3 px-8 rounded-md hover:shadow-lg hover:opacity-70 transition duration-300 ease-in-out cursor-pointer"
             >
               Apply Now
             </a>

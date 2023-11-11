@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div className="navbar bg-base-300">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">Home</a>
-        <a className="btn btn-ghost normal-case text-xl">Detail</a>
+        <Link to="/">
+          <a className="btn btn-ghost normal-case text-xl">KarirLink</a>
+        </Link>
       </div>
       <div className="flex-none gap-5">
         <div className="form-control">
