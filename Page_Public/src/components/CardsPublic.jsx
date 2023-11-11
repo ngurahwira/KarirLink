@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Job_Portal_URL = "http://localhost:3000/";
+const Job_Portal_URL = import.meta.env.VITE_BACKEND_HOST;
 const Job_API = axios.create({
   baseURL: Job_Portal_URL,
 });
