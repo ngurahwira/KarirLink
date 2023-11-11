@@ -31,7 +31,7 @@ const ProductDetail = () => {
     }
 
     fetchJobs();
-  }, []);
+  }, [id]);
 
   if (isLoading) {
     return <p>Loading...</p>;
