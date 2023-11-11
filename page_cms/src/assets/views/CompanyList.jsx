@@ -39,18 +39,14 @@ const Company = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mt-11">
         <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
           Add Company
         </button>
       </div>
-      <div className="container w-full h-full flex items-center mt-9 ">
-        {/* Main Content */}
-        {/* {JSON.stringify(companies)} */}
-
-        <div className="container flex pt-10 ">
+      <div class="flex h-screen">
+        <div className="m-auto mt-20">
           <table className="container table w-full ">
-            {/* head */}
             <thead>
               <tr className="bg-base-200">
                 <th></th>
@@ -77,7 +73,6 @@ const Company = () => {
                 </tr>
               ))}
             </tbody>
-            ;
           </table>
         </div>
       </div>

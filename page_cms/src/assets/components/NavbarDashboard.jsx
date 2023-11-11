@@ -44,7 +44,7 @@ const Navbar = () => {
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-xl">
-            <Link to="/home">KarirLink</Link>
+            <Link to="/dashboard">KarirLink</Link>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">

@@ -1,13 +1,51 @@
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { BASE_URL } from "../configs/config";
+
+const Job_API = axios.create({
+  baseURL: BASE_URL,
+});
+
 const Dashboard = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    async function fetchJobs() {
+      try {
+        setIsLoading(true);
+        const { data } = await Job_API.get("job");
+        // console.log(data.dataJob);
+        setJobs(data.dataJob);
+      } catch (error) {
+        // console.log(error);
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchJobs();
+  }, []);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+  if (error) {
+    return <p>Error fetching</p>;
+  }
+
   return (
     <>
-      <div className="container w-full h-full flex items-center ">
-        {/* Main Content */}
-        <div className="container flex pt-10 ">
-          <table className="container table w-full">
+      {/* {JSON.stringify(jobs)} */}
+      <div class="flex h-screen">
+        <div className="m-auto mt-20">
+          <table className="table w-full">
             {/* head */}
             <thead>
-              <tr>
+              <tr className="bg-base-200">
                 <th></th>
                 <th>Title</th>
                 <th>Description</th>
@@ -19,31 +57,20 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {/* row 1 */}
-              <tr className="bg-base-200">
-                <th>1</th>
-                <td>Cy Ganderton</td>
-                <td>Quality Control Specialist</td>
-                <td>Blue</td>
-                <td>Blue</td>
-                <td>Blue</td>
-                <td>Blue</td>
-                <td>Blue</td>
-              </tr>
-              {/* row 2 */}
-              <tr>
-                <th>2</th>
-                <td>Hart Hagerty</td>
-                <td>Desktop Support Technician</td>
-                <td>Purple</td>
-              </tr>
-              {/* row 3 */}
-              <tr>
-                <th>3</th>
-                <td>Brice Swyre</td>
-                <td>Tax Accountant</td>
-                <td>Red</td>
-              </tr>
+              {jobs.map((el, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{el.title}</td>
+                  <td>{el.description}</td>
+                  <td>{el.imgUrl}</td>
+                  <td>{el.jobType}</td>
+                  <td>{el.companyId}</td>
+                  <td>{el.authorId}</td>
+                  <td>
+                    <a href="">Edit</a> || <a href="">Delete</a>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
