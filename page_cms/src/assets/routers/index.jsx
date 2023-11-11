@@ -24,8 +24,8 @@ const router = createBrowserRouter([
     element: <BaseLayout />,
     children: [
       {
-        path: "/dashboard",
-        element: <PrivateRoute element={<Dashboard />} path="/dashboard" />,
+        path: "/",
+        element: <PrivateRoute element={<Dashboard />} path="/" />,
       },
       {
         path: "/company",
