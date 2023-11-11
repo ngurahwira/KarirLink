@@ -36,7 +36,7 @@ const Home = () => {
           {/* right */}
           <div className="w-full lg:w-1/2 hidden lg:flex items-center">
             <img
-              src="/src/assets/img2.png"
+              src="/public/assets/img2.png"
               alt="test"
               className="max-w-full mx-auto h-auto lg:h-full"
             />
