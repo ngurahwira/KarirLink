@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../configs/config";
+import { useNavigate } from "react-router-dom";
 
 const accessToken = localStorage.getItem("token");
 
@@ -17,6 +18,23 @@ const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [jobs, setJobs] = useState([]);
+
+  const navigate = useNavigate();
+  const hendleOnclickEdit = (id) => {
+    navigate(`/job/${id}`);
+  };
+
+  const hendleOnclickDelete = async (id) => {
+    try {
+      await Job_API.delete(`job/${id}`);
+      const { data } = await Job_API.get("job");
+      setJobs(data.dataJob);
+
+      console.log(`Job with ID ${id} deleted successfully.`);
+    } catch (error) {
+      console.error("Error deleting job:", error);
+    }
+  };
 
   useEffect(() => {
     async function fetchJobs() {
@@ -73,7 +91,13 @@ const Dashboard = () => {
                   <td>{el.companyId}</td>
                   <td>{el.authorId}</td>
                   <td>
-                    <a href="">Edit</a> || <a href="">Delete</a>
+                    <button onClick={() => hendleOnclickEdit(el.id)}>
+                      Edit
+                    </button>{" "}
+                    |
+                    <button onClick={() => hendleOnclickDelete(el.id)}>
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}

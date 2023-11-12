@@ -6,6 +6,7 @@ import FormJob from "../components/FormAddJob";
 import FormStaff from "../components/FormAddUser";
 import Company from "../views/CompanyList";
 import FormAddCompany from "../components/FormAddCompany";
+import EditJobForm from "../components/FormEditJob";
 
 const isAuthenticated = () => {
   const accessToken = localStorage.getItem("token");
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     element: <FormAddCompany />,
     path: "/formCompany",
+  },
+  {
+    element: <EditJobForm />,
+    path: "/job/:id",
   },
 ]);
 
