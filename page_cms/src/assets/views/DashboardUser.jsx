@@ -7,7 +7,6 @@ const accessToken = localStorage.getItem("token");
 
 const Job_API = axios.create({
   baseURL: BASE_URL,
-
   headers: {
     Authorization: `Bearer ${accessToken}`,
     "Content-Type": "application/json",

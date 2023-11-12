@@ -18,7 +18,7 @@ const FormLogin = () => {
           password,
         })
         .then((res) => localStorage.setItem("token", res.data.access_token))
-        .then(() => navigate("/dashboard"))
+        .then(() => navigate("/"))
         .then(() => window.location.reload());
     } catch (error) {
       // console.log(error);

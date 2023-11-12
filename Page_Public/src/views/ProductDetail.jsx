@@ -14,6 +14,8 @@ const ProductDetail = () => {
   const [error, setError] = useState(null);
   const [jobs, setJobs] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
+
   // console.log(id);
   useEffect(() => {
     async function fetchJobs() {
@@ -32,7 +34,7 @@ const ProductDetail = () => {
     if (id) {
       fetchJobs();
     }
-  }, [id]);
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -62,14 +64,19 @@ const ProductDetail = () => {
                 {jobs.dataJob.jobType}
               </h6>
               <p className="text-gray-700">{jobs.dataJob.description}</p>
-              <div class=" pt-4 pb-2">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+              <div className=" pt-4 pb-2">
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                   #{jobs.dataJob.Company.name}
                 </span>
               </div>
 
               <div className="card-actions flex justify-end mt-4">
-                <button className="btn btn-primary">Apply Now</button>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => navigate("/login")}
+                >
+                  Apply Now
+                </button>
               </div>
             </div>
           </div>

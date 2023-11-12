@@ -1,3 +1,7 @@
+import axios from "axios";
+import { useState } from "react";
+import { BASE_URL } from "../configs/config";
+
 const FormJob = () => {
   return (
     <>

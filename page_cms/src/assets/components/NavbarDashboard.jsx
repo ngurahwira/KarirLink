@@ -35,40 +35,40 @@ const Navbar = () => {
             >
               <li>
                 <a>
-                  <Link to="/FormJob">Add Job</Link>
+                  <Link to="/formJob">Add Job</Link>
                 </a>
               </li>
               <li>
                 <a>
-                  <Link to="/FormStaff">Add Staff</Link>
+                  <Link to="/register">Add Staff</Link>
                 </a>
               </li>
               <li>
                 <a>
-                  <Link to="/Company">Company</Link>
+                  <Link to="/company">Company</Link>
                 </a>
               </li>
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-xl">
-            <Link to="/dashboard">KarirLink</Link>
+            <Link to="/">KarirLink</Link>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
               <a>
-                <Link to="/FormJob">Add Job</Link>
+                <Link to="/formJob">Add Job</Link>
               </a>
             </li>
             <li>
               <a>
-                <Link to="/FormStaff">Add Staff</Link>
+                <Link to="/register">Add Staff</Link>
               </a>
             </li>
             <li>
               <a>
-                <Link to="/Company">Company</Link>
+                <Link to="/company">Company</Link>
               </a>
             </li>
           </ul>

@@ -48,7 +48,7 @@ Mencoba client server communication menggunakan HTTP Client seperti axios.
 
 - [ ] Public site: Halaman Home
       Lakukan GET data entitas utama (include: pagination, filter dan sort) pada halaman ini, tampilkan data sesuai dengan database server kalian.
-- [ ] CMS site: Halaman Login
+- [x] CMS site: Halaman Login
       Lakukan POST pada pada halaman ini, Jika proses login berhasil, simpan token di localStorage
 - [ ] CMS site: Halaman Create
       Lakukan POST pada halaman create entitas utama, coba kalian buat data baru dan pastikan bahwa hanya User yang Valid yang bisa membuat data baru
@@ -63,11 +63,11 @@ Target:
 
 Convert layout atau slicing template yang sudah dibuat ke dalam React.js :
 
-- [ ] Coba buat React pada project hasil generate Vite
-- [ ] Public site
+- [x] Coba buat React pada project hasil generate Vite
+- [x] Public site
 
-  - [ ] Halaman Home/Landing Page
-  - [ ] Halaman Detail (Public)
+  - [x] Halaman Home/Landing Page
+  - [x] Halaman Detail (Public)
 
 - [ ] CMS site
   - [x] Halaman Login
@@ -107,17 +107,17 @@ Pastikan setiap pergantian tampilan terjadi secara reaktif dengan tidak me-refre
 
 Silahkan Implementasikan routing pada aplikasi client kalian.
 
-- [ ] Public site
-  - [ ] Halaman Home/Landing Page
-  - [ ] Halaman Detail
+- [x] Public site
+  - [x] Halaman Home/Landing Page
+  - [x] Halaman Detail
 - [ ] CMS site
-  - [ ] Halaman Login
-  - [ ] Halaman list entitas utama
-  - [ ] Halaman create entitas utama (boleh menggunakan modal)
-  - [ ] Halaman edit entitas utama (boleh menggunakan modal)
+  - [x] Halaman Login
+  - [x] Halaman list entitas utama
+  - [x] Halaman create entitas utama (boleh menggunakan modal)
+  - [x] Halaman edit entitas utama (boleh menggunakan modal)
   - [ ] Halaman upload image untuk entitas utama (boleh menggunakan modal)
-  - [ ] Halaman list untuk entitas kedua
-  - [ ] Halaman register staff
+  - [x] Halaman list untuk entitas kedua
+  - [x] Halaman register staff
 
 ## **W2D5**
 
@@ -125,4 +125,4 @@ Target:
 
 Coba lakukan deployment untuk client (bisa coba deploy hal sederhana terlebih dahulu seperti halaman yang menampilkan ‘hello world’) menggunakan Firebase/Vercel.
 
-- [ ] Deploy client
+- [x] Deploy client

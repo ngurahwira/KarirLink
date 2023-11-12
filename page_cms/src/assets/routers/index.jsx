@@ -18,7 +18,11 @@ const PrivateRoute = ({ element, path }) => {
 const router = createBrowserRouter([
   {
     element: <FormLogin />,
-    path: "/Login",
+    path: "/login",
+  },
+  {
+    element: <FormStaff />,
+    path: "/register",
   },
   {
     element: <BaseLayout />,
@@ -35,15 +39,11 @@ const router = createBrowserRouter([
   },
   {
     element: <FormJob />,
-    path: "/FormJob",
-  },
-  {
-    element: <FormStaff />,
-    path: "/FormStaff",
+    path: "/formJob",
   },
   {
     element: <FormAddCompany />,
-    path: "/FormCompany",
+    path: "/formCompany",
   },
 ]);
 
