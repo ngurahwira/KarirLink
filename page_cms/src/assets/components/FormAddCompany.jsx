@@ -100,6 +100,8 @@ const FormAddCompany = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 

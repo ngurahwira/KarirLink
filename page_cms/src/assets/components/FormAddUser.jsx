@@ -11,7 +11,6 @@ const FormStaff = () => {
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
-  const [error, setError] = useState(null);
 
   const accessToken = localStorage.getItem("token");
   const Job_API = axios.create({
@@ -39,7 +38,6 @@ const FormStaff = () => {
       // console.log(userData);
     } catch (error) {
       console.error(error);
-      setError(error);
     }
     return navigate("/");
   };
