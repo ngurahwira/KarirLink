@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Job_Portal_URL = import.meta.env.VITE_BACKEND_HOST;
 const Job_API = axios.create({
@@ -13,6 +13,8 @@ export const Cards = () => {
   const [error, setError] = useState(null);
   const [jobs, setJobs] = useState([]);
 
+  let [searchParams] = useSearchParams();
+
   const navigate = useNavigate();
   const hendleOnclick = (id) => {
     navigate(`/detail/${id}`);
@@ -22,7 +24,13 @@ export const Cards = () => {
     async function fetchJobs() {
       try {
         setIsLoading(true);
-        const { data } = await Job_API.get("pub/job");
+
+        let apiUrl = "pub/job";
+
+        if (searchParams.has("search")) {
+          apiUrl += `?search=${searchParams.get("search")}`;
+        }
+        const { data } = await Job_API.get(apiUrl);
         // console.log(data);
         setJobs(data.result.data);
       } catch (error) {
@@ -34,7 +42,7 @@ export const Cards = () => {
     }
 
     fetchJobs();
-  }, []);
+  }, [searchParams]);
 
   if (isLoading) {
     return <p>Loading...</p>;
