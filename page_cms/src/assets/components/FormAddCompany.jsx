@@ -1,18 +1,97 @@
+import { useState } from "react";
+import axios from "axios";
+import { BASE_URL } from "../configs/config";
+import ButtonSubmit from "./ButtonSubmit";
+import { useNavigate } from "react-router-dom";
+
 const FormAddCompany = () => {
+  const [name, setName] = useState("");
+  const [companyLogo, setImageUrl] = useState("");
+  const [location, setLocation] = useState("");
+  const [email, setEmail] = useState("");
+  const [description, setDescription] = useState("");
+
+  const accessToken = localStorage.getItem("token");
+  const Job_API = axios.create({
+    baseURL: BASE_URL,
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+  });
+
+  const navigate = useNavigate();
+
+  const handleAddCompany = async (event) => {
+    event.preventDefault();
+    try {
+      const companyData = await Job_API.post("/company", {
+        name,
+        companyLogo,
+        location,
+        email,
+        description,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+    return navigate("/company");
+  };
+
   return (
     <>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
+            <h1 className="text-5xl font-bold">Add Company</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            {/* form */}
+            <form
+              className="card-body"
+              novalidate=""
+              action=""
+              onSubmit={handleAddCompany}
+            >
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="name"
+                  placeholder="Name"
+                  className="input input-bordered"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Logo</span>
+                </label>
+                <input
+                  type="name"
+                  placeholder="Logo"
+                  className="input input-bordered"
+                  value={companyLogo}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Location</span>
+                </label>
+                <input
+                  type="name"
+                  placeholder="Location"
+                  className="input input-bordered"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+              </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -21,27 +100,24 @@ const FormAddCompany = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
-                  required
                 />
               </div>
+
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text">Description</span>
                 </label>
                 <input
-                  type="password"
-                  placeholder="password"
+                  type="name"
+                  placeholder="Description"
                   className="input input-bordered"
-                  required
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
               </div>
+
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <ButtonSubmit label="Add Company" />
               </div>
             </form>
           </div>

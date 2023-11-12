@@ -39,6 +39,7 @@ const FormStaff = () => {
       // console.log(userData);
     } catch (error) {
       console.error(error);
+      setError(error);
     }
     return navigate("/");
   };
@@ -154,7 +155,6 @@ const FormStaff = () => {
               </div>
               <div className="form-control mt-6">
                 <ButtonSubmit label="Add" />
-                {/* <button className="btn btn-primary">Add</button> */}
               </div>
             </form>
           </div>
